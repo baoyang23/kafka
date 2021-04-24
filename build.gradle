@@ -771,6 +771,9 @@ project(':core') {
     api project(':clients')
     api libs.scalaLibrary
 
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+
     implementation project(':metadata')
     implementation project(':raft')
 
@@ -787,6 +790,7 @@ project(':core') {
     implementation libs.scalaReflect
     implementation libs.scalaLogging
     implementation libs.slf4jApi
+
     implementation(libs.zookeeper) {
       exclude module: 'slf4j-log4j12'
       exclude module: 'log4j'
